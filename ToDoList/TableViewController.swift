@@ -16,6 +16,17 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            // NavigationBarの背景色の設定
+            appearance.backgroundColor = UIColor.systemOrange
+            // NavigationBarのタイトルの文字色の設定
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        }
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.didTapAddItemButton(_:)))
         
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
