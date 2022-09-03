@@ -19,7 +19,7 @@ class TableViewController: UITableViewController {
         if #available(iOS 15.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            // NavigationBarの背景色の設定
+            // NavigationBarの背景色の設定をする
             appearance.backgroundColor = UIColor.systemOrange
             // NavigationBarのタイトルの文字色の設定
             appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
